@@ -1,0 +1,46 @@
+on("chat:message", function(msg) {
+if(msg.type == "api" && msg.content.indexOf("!BS") !== -1) {        
+    var text    = msg.content.split("...");
+    var carac   = text[1];
+    var tension = text[2];
+    var titre   = String(text[3]+" "+text[4]+" "+text[5]);
+    
+    var x = 1;
+    var resultat= 0;
+    var reussite= 0;
+    var jet ="";
+    
+    for (x = 1; x <= 6; x++) {
+        resultat= Math.floor(Math.random() * (6 - 1 +1)) + 1;
+        
+        if(x <= carac){
+            if (resultat >= 4){ reussite +=1}
+            else    {};
+            
+            jet+="<p style='border: 1px solid #666666; border-radius: 3px; vertical-align: middle; margin-right: 3px;display: inline-block; color: #ffffff; background: #666666; height: 20px; width: 20px; text-align: center; padding: 3px'>"+resultat+"</p>"
+        }
+        else if(tension > 0){
+            tension -=1;
+            if      (resultat == 1){ reussite-=1}
+            else if (resultat == 4){ reussite +=1}
+            else if (resultat == 5){ reussite +=1}
+            else if (resultat == 6){ reussite +=2}
+            else    {}
+            
+            jet+="<p style='border: 1px solid #666666; border-radius: 3px; vertical-align: middle; margin-right: 3px;display: inline-block; color: #ffffff; background: #ff0000; height: 20px; width: 20px; text-align: center; padding: 3px'>"+resultat+"</p>"
+        }
+        else{ 
+            if      (resultat == 1){ reussite-=1}
+            else if (resultat == 6){ reussite +=1}
+            else    {}
+            jet+="<p style='border: 1px solid #666666; border-radius: 3px; vertical-align: middle; margin-right: 3px;display: inline-block; color: #000000; background: #ffffff; height: 20px; width: 20px; text-align: center; padding: 3px'>"+resultat+"</p>"}
+    }
+    
+    
+    
+    sendChat(msg.who, "<div style='border: 1px solid #666666; background: #ffffff; border: 1xp solid #666666; padding: 5px'><p style='font-family: Times new roman; font-size: 20px; margin-bottom: 7px'>"+titre+"</p>"+jet+"<br /><p style='display: inline-block'>Résultat :</p> "+reussite+'</div>');
+
+}
+/* ON EST EN DEHORS DU IF*/
+});
+/* ON EST EN DEHORS DE LA FONCTION*/
