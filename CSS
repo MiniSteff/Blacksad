@@ -1,0 +1,249 @@
+ @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+ 
+.charsheet 
+{ 
+    
+    color: #000000;
+    background: #ffffff;
+    width: 800px;
+    font-size: 15px;
+    border: 1px solid #333333;
+    box-sizing: border-box;}
+
+.charsheet *, .charsheet *:before, .charsheet *:after {
+    box-sizing: inherit;
+    
+}
+
+/* Redéfinie des trucs à zéro, retirer les puces des listes et la décoraction des liens */
+.charsheet h1, .charsheet h2, .charsheet h3, .charsheet h4, .charsheeth5, 
+.charsheet h6, .charsheet a, .charsheet p, .charsheet span, .charsheet div,
+.charsheet figure, .charsheet img, .charsheet ul, .charsheet li, .charsheet select, .charsheet option 
+.charsheet body, .charsheet fieldset, .charsheet input, .charsheet label, .charsheet textarea 
+{
+	margin: 0; padding: 0; border: 0;
+	list-style: none;
+	box-shadow: 0 0 0 #000000; border-radius: 0;
+	font-family: 'Times new romans';
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+textarea{ white-space: pre;;}
+input[type="number"]{ text-align: center; padding: 5px;}
+
+.sheet-titre1{
+    font-size: 20px;
+    border-bottom: 1px dotted #444444;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #444444;
+    text-align: right;
+    font-style: italic;
+    font-family: 'Times new roman', cursive;
+}
+
+.sheet-titre2{
+    display: block;
+    margin: -10px;
+    margin-bottom: 10px;
+    width: 799px;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    background: #333333;
+    padding: 10px 50px;
+    font-style: italic;
+    font-family: 'Bangers', cursive;
+}
+
+.sheet-concept{
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Times new romans';
+}
+
+.sheet-p2{
+    color: #444444;
+    font-size: 20px;
+    width: 80px !important;
+    font-family: 'Bangers', cursive;
+}
+
+.sheet-p3{
+    color: #444444;
+    font-size: 20px;
+    width: 120px !important;
+    font-family: 'Bangers', cursive;
+}
+
+.sheet-titre3{
+    color: #444444;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Bangers', cursive;
+}
+
+.sheet-number1{
+    border: 1px solid #000000;
+    width: 50px !important;
+    height: 50px !important;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Bangers', cursive;
+
+}
+
+
+.sheet-div1{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #666666;
+    box-shadow: 1px 1px 1px #666666;
+}
+
+.sheet-carac ul li *{
+    display: inline-block;
+}
+
+.sheet-carac ul li p{ width: 120px;}
+.sheet-carac ul li input[type="text"]{ font-style: italic;} 
+
+.sheet-carac ul li input[type="text"]{ width: 390px;}
+
+
+.sheet-valeurCombat ul li, .sheet-valeurCombat ul li *{
+    display: inline-block;
+}
+
+.sheet-valeurCombat ul li{ width: 130px; text-align: center;}
+
+.sheet-morale ul li, .sheet-morale ul li *{
+    display: inline-block;
+}
+
+.sheet-morale ul li{width: 130px; text-align: center;}
+
+.sheet-sante ul li *{
+    display: inline-block;
+}
+
+.sheet-morale2 li{ 
+    text-align: left !important;
+    width: 100% !important;
+}
+
+.sheet-sante ul li input{ margin-right: 10px; position: relative; top: -4px; height: 30px;}
+.sheet-sante ul li p{ width: 150px; font-family: 'Bangers', cursive; font-size: 20px; color: #444444; margin-bottom: 10px; vertical-align: middle}
+.sheet-sante ul li .sheet-p1{ font-style: italic; font-family: 'Times new romans'; font-size: 15px;}
+
+.sheet-div2 input[type="checkbox"]{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.sheet-div2 input[type="checkbox"] ~ span{ display: none; white-space: pre;}
+.sheet-div2 input[type="checkbox"]:checked ~ span{ display: inline-block;}
+.sheet-div2 input[type="checkbox"]:checked ~ textarea{ display: none;}
+
+
+.sheet-dice1{
+    position: relative;
+    z-index: 100;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: -20px;
+}
+
+.sheet-dice2{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+.sheet-dice1:checked ~ .sheet-dice2{ opacity: 0.25;}
+.sheet-dice1:checked + .sheet-dice2{ opacity: 1;}
+
+
+.sheet-d6{
+    display: inline-block;
+    background: url('https://raw.githubusercontent.com/MiniSteff/Blacksad/main/d6.png') center center no-repeat;
+    background-size: 25px 25px;
+    width: 35px;
+    height: 35px;
+    margin-left: -50px;
+    margin-right: 10px;
+    opacity: 0.6;
+    transition: 0.3s all ease-in;
+}
+
+button[type="roll"]{
+    position: relative;
+    z-index: 1000;
+    opacity: 0;
+    width: 35px;
+    height: 25px;
+    left: -7px;
+    vertical-align: middle;
+}
+
+button[type="roll"]:hover + .sheet-d6{
+    opacity: 0.9;
+}
+    
+
+input[name="attr_depassement"], input[name="attr_instinct"]{
+    position: relative;
+    z-index: 999;
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.sheet-puce1{
+    height: 15px;
+    width: 15px;
+    margin-left: -15px;
+    background: #000000;
+    border: 1px solid #000000;
+    border-radius: 100px;
+}
+
+.sheet-puce1:nth-of-type(1){
+    background: #ffffff;
+    border: 0;
+    border-radius: 0;
+    line-height: 15px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    opacity: 0.25;
+}
+
+input[name="attr_depassement"]:checked ~ .sheet-puce1, input[name="attr_instinct"]:checked ~ .sheet-puce1{ background: #ffffff;}
+input[name="attr_depassement"]:checked + .sheet-puce1, input[name="attr_instinct"]:checked + .sheet-puce1{ background: #000000;}
+
+input[name="attr_depassement"]:checked + .sheet-puce1:nth-of-type(1), input[name="attr_instinct"]:checked + .sheet-puce1:nth-of-type(1){ background:#ffffff; opacity: 1;}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
