@@ -1,0 +1,18 @@
+POUR LE HTML
+----------------------------------------------------------------------
+Dans Github, ouvrez HTML et copier le code
+Dans Roll20 : Paramètre > Paramètre de jeu
+Copier le code HTML dans "HTML Layout" et enregistrer
+
+POUR LE CSS
+----------------------------------------------------------------------
+Dans Github, ouvrez CSS et copier le code
+Dans Roll20 : Paramètre > Paramètre de jeu
+Copier le code CSS dans "CSS Styling" et enregistrer
+
+POUR LE SCRIPT
+----------------------------------------------------------------------
+Dans Github, ouvrez SCRIPT et copier le code
+Dans Roll20 : Paramètre > Script API
+Cliquer sur New Script et copier le SCRIPT
+Donner le nom que vous voulez dans Name et enregistrer
